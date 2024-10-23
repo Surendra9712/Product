@@ -1,0 +1,16 @@
+@use "../abstract/sass-vars" as vars;
+@import "./../base/mixin";
+
+.container {
+  display: block;
+  width: 100%;
+  padding: 0 var(--space-xl);
+  margin: 0 auto;
+  max-width: vars.$breakpoint-2xl;
+  @include sm(){
+    padding: 0 var(--space-md);
+  }
+  @include xs(){
+    padding: 0 var(--space-sm);
+  }
+}

@@ -1,0 +1,105 @@
+@import "../abstract/sass-vars";
+
+$wordBreakOptions: normal, break-all, keep-all, break-word, initial, inherit;
+$positionOptions:static,absolute,fixed,relative,sticky;
+$indexOptions:-1,0,1,2,3,4,5,6,7,8,9;
+/* line clamp */
+.line-clamp-none {
+  overflow: visible;
+  display: block;
+  -webkit-box-orient: horizontal;
+  -webkit-line-clamp: none;
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@for $i from 1 through 6 {
+  .line-clamp-#{$i} {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: #{$i};
+  }
+}
+
+/* list style */
+@each $style in $listStyleOptions {
+  .list-#{$style} {
+    list-style: #{$style};
+  }
+}
+
+/* text align */
+@each $align in $textAlignOptions {
+  .text-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+/* text transform */
+@each $transformOption in $textTransformOptions {
+  .text-#{$transformOption} {
+    text-transform: #{$transformOption};
+  }
+}
+
+/* text transform */
+@each $decorationOption in $textDecorationOption {
+  .text-#{$decorationOption} {
+    text-decoration: #{$decorationOption};
+  }
+}
+
+/* text color */
+@each $color in $textColorOptions {
+  .text-#{$color} {
+    color: var(--text-#{$color}) !important;
+  }
+}
+
+/*cursor*/
+@each $option in $cursorOptions {
+  .cursor-#{$option} {
+    cursor: $option;
+  }
+}
+
+/*Overflow*/
+@each $option in $overflowOptions {
+  .overflow-#{$option} {
+    overflow: $option;
+  }
+  .overflow-x-#{$option} {
+    overflow-x: $option;
+  }
+  .overflow-y-#{$option} {
+    overflow-y: $option;
+  }
+}
+
+/*Work break*/
+@each $option in $wordBreakOptions {
+  .#{$option} {
+    word-break: $option;
+  }
+}
+
+/*Position*/
+@each $option in $positionOptions {
+  .#{$option} {
+    position: $option;
+  }
+}
+@each $option in $indexOptions {
+  .index-#{$option} {
+    z-index: $option;
+  }
+}
+
+.insect-0{
+  inset: 0;
+}

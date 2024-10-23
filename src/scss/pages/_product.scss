@@ -1,0 +1,32 @@
+.page-wrapper {
+  padding: calc(var(--space-3xl) + var(--space-3xs)) 0;
+}
+
+.description {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: revert;
+    margin-top: 0;
+  }
+
+  ul {
+    list-style: unset;
+    margin-left: var(--space-lg);
+  }
+}
+
+.product-item {
+  img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  .discount {
+    padding: 2px;
+  }
+}

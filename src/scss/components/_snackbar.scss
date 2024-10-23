@@ -1,0 +1,21 @@
+.snackbar {
+  visibility: hidden;
+  padding: var(--space-xs);
+  position: fixed;
+  z-index: 9;
+  right: var(--space-2xs);
+  top: var(--space-2xs);
+  transition: visibility 0s, opacity 0.5s linear;
+  overflow: hidden;
+  min-height: var(--space-xl);
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0 1px 18px 0px rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-default);
+  max-width: 40rem;
+  background-color: var(--surface-base);
+  &.show {
+    visibility: visible;
+  }
+  .alert-icon{
+    margin-top: var(--space-3xs);
+  }
+}

@@ -1,0 +1,29 @@
+$breakpoint-options: xs 480px, sm 640px, md 768px, lg 1024px, xl 1280px,
+2xl 1536px;
+$defaultSizingOptions: xs, sm, md, lg, xl;
+$colorOptions: primary, info, success, warning, danger, light;
+$overflowOptions: scroll, hidden, auto, clip, visible;
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+$breakpoints: (
+        xs: $breakpoint-xs,
+        sm: $breakpoint-sm,
+        md: $breakpoint-md,
+        lg: $breakpoint-lg,
+        xl: $breakpoint-xl,
+        2xl: $breakpoint-2xl,
+);
+
+$textColorOptions: primary,secondary, info, success, warning, danger, default, muted, currentColor;
+$textTypeSizeOptions: lg, md, sm;
+$fontWeightOptions: thin, light, normal, md, semibold, bold, extrabold;
+$textTypeOptions: body, label, title;
+$textAlignOptions: left, center, right, justify, start, end;
+$textTransformOptions: uppercase, lowercase, capitalize, none;
+$textDecorationOption: underline, overline, line-through, none;
+$listStyleOptions: none, disc, circle, decimal;
+$cursorOptions:alias,all-scroll,auto,cell,col-resize,context-menu,copy,crosshair,default,e-resize,ew-resize,grab,grabbing,help,move,n-resize,ne-resize,nesw-resize,ns-resize,nw-resize,nwse-resize,no-drop,none,not-allowed,pointer,progress,row-resize,s-resize,se-resize,sw-resize,text;

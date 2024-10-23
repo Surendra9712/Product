@@ -1,0 +1,73 @@
+@use "../abstract/sass-vars" as vars;
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--heading-font-family-name);
+  font-style: var(--heading-font-family-style);
+  font-weight: var(--heading-font-weight);
+}
+
+.h1 {
+  font-size: var(--heading-1-font-size);
+  line-height: var(--heading-1-line-height);
+}
+.h2 {
+  font-size: var(--heading-2-font-size);
+  line-height: var(--heading-2-line-height);
+}
+.h3 {
+  font-size: var(--heading-3-font-size);
+  line-height: var(--heading-3-line-height);
+}
+.h4 {
+  font-size: var(--heading-4-font-size);
+  line-height: var(--heading-4-line-height);
+}
+.h5 {
+  font-size: var(--heading-5-font-size);
+  line-height: var(--heading-5-line-height);
+}
+.h6 {
+  font-size: var(--heading-6-font-size);
+  line-height: var(--heading-6-line-height);
+}
+
+/* text styles & sizes */
+@each $textType in vars.$textTypeOptions {
+  @each $textSize in vars.$textTypeSizeOptions {
+    .#{$textType}-#{$textSize} {
+      font-family: var(--#{$textType}-font-family-name);
+      font-style: var(--#{$textType}-font-family-style);
+      font-weight: var(--#{$textType}-font-weight);
+      font-size: var(--#{$textType}-#{$textSize}-font-size);
+    }
+  }
+}
+
+/* font weight */
+@each $weight in vars.$fontWeightOptions {
+  .font-#{$weight} {
+    font-weight: var(--weight-#{$weight});
+  }
+}
+
+/* font style */
+.font-italic {
+  font-style: italic;
+}
+
+.font-normal {
+  font-style: normal;
+}
+
+.font-ordinal {
+  font-variant-numeric: ordinal;
+}
+
+.font-slashed-zero {
+  font-variant-numeric: slashed-zero;
+}

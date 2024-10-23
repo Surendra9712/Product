@@ -1,0 +1,36 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: var(--weight-semibold);
+  background-color: rgba(var(--surface-100));
+  border: 1px solid var(--transparent);
+
+  img {
+    object-fit: cover;
+    border-radius: var(--radius-rounded);
+    height: 100%;
+    width: 100%;
+  }
+
+  .badge {
+    position: absolute;
+  }
+
+  &-btn {
+    background-color: var(--button-bg-default);
+    border: 1px solid rgba(var(--border-default));
+    color: currentColor;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--button-bg-default-hover);
+    }
+
+    &:active,
+    &.active {
+      background-color: var(--button-bg-default-active);
+    }
+  }
+}

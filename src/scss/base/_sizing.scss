@@ -1,0 +1,133 @@
+$sizeOptions: (
+  "0",
+  "px",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "1\\/2",
+  "1\\/3",
+  "2\\/3",
+  "1\\/4",
+  "2\\/4",
+  "3\\/4",
+  "1\\/5",
+  "2\\/5",
+  "3\\/5",
+  "4\\/5",
+  "1\\/6",
+  "2\\/6",
+  "3\\/6",
+  "4\\/6",
+  "1\\/12",
+  "2\\/12",
+  "3\\/12",
+  "4\\/12",
+  "5\\/12",
+  "6\\/12",
+  "7\\/12",
+  "8\\/12",
+  "9\\/12",
+  "10\\/12",
+  "11\\/12",
+  "full"
+);
+$avatarSizeOptions: xs, sm, md, lg, xl, 2xl, 3xl;
+
+@each $option in $sizeOptions {
+  /* Width */
+  .w-#{$option} {
+    width: var(--size-#{$option}) !important;
+  }
+  .max-w-#{$option} {
+    max-width: var(--size-#{$option});
+  }
+  .min-w-#{$option} {
+    min-width: var(--size-#{$option});
+  }
+
+  /* Height */
+  .h-#{$option} {
+    height: var(--size-#{$option});
+  }
+  .max-h-#{$option} {
+    max-height: var(--size-#{$option});
+  }
+  .min-h-#{$option} {
+    min-height: var(--size-#{$option});
+  }
+  .flex-basis-#{$option}{
+    flex-basis: var(--size-#{$option});
+  }
+
+  /*Position*/
+  .top-#{$option}{
+    top: var(--size-#{$option});
+  }
+  .left-#{$option}{
+    left: var(--size-#{$option});
+  }
+  .right-#{$option}{
+    right: var(--size-#{$option});
+  }
+  .bottom-#{$option}{
+    bottom: var(--size-#{$option});
+  }
+  .translate-x-#{$option}{
+    transform: translateX(var(--size-#{$option}));
+  }
+  .translate-y-#{$option}{
+    transform: translateY(var(--size-#{$option}));
+  }
+  .-translate-x-#{$option}{
+    transform: translateX(calc(var(--size-#{$option}) * -1));
+  }
+  .-translate-y-#{$option}{
+    transform: translateY(calc(var(--size-#{$option}) * -1));
+  }
+}
+
+.w-screen {
+  width: var(--size-w-screen);
+}
+.min-w-screen {
+  min-width: var(--size-w-screen);
+}
+.max-w-screen {
+  max-width: var(--size-w-screen);
+}
+
+.h-screen {
+  height: var(--size-h-screen);
+}
+.min-h-screen {
+  min-height: var(--size-h-screen);
+}
+.max-h-screen {
+  max-height: var(--size-h-screen);
+}
+@each $size in $avatarSizeOptions {
+  .size-#{$size} {
+    height: var(--avatar-#{$size});
+    width: var(--avatar-#{$size});
+    min-width: var(--avatar-#{$size});
+    font-size: var(--text-#{$size});
+
+    .svg-icon {
+      height: 50%;
+      width: 50%;
+    }
+  }
+}

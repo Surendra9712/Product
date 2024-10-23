@@ -1,0 +1,49 @@
+// Mixin to generate media queries
+@use "../abstract/sass-vars" as vars;
+
+@mixin minViewport($value) {
+  @media (min-width: $value) {
+        @content;
+  }
+}
+
+@mixin maxViewport($value) {
+  @media (max-width: $value) {
+    @content;
+  }
+}
+
+// Extra Small devices
+@mixin xs {
+  @media (max-width: vars.$breakpoint-xs) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (max-width: vars.$breakpoint-sm) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: vars.$breakpoint-md) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: vars.$breakpoint-lg) {
+    @content;
+  }
+}
+
+// Custom width
+@mixin custom-screen($screen-width) {
+  @media (max-width: $screen-width) {
+    @content;
+  }
+}

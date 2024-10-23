@@ -1,0 +1,81 @@
+$flexDirectionOptions: row, row-reverse, column, column-reverse;
+$flexWrapOptions: wrap, wrap-reverse, nowrap;
+$justifyContentOptions: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        evenly: space-evenly,
+        stretch: stretch,
+);
+$alignItemsOptions: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+);
+@use "mixin";
+@use "../abstract/sass-vars" as vars;
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 1 auto;
+}
+
+@mixin generateFlexClasses($options, $property, $prefix) {
+  @each $name, $option in $options {
+    .#{$prefix}-#{$name} {
+      @if ($option) {
+        #{$property}: $option;
+      } @else {
+        #{$property}: $name;
+      }
+    }
+    @each $breakpoint, $value in vars.$breakpoints {
+      @include mixin.maxViewport($value) {
+        .#{$prefix}-max-#{$breakpoint}-#{$name} {
+          @if ($option) {
+            #{$property}: $option !important;
+          } @else {
+            #{$property}: $name !important;
+          }
+        }
+      }
+      @include mixin.minViewport($value) {
+        .#{$prefix}-#{$breakpoint}-#{$name} {
+          @if ($option) {
+            #{$property}: $option !important;
+          } @else {
+            #{$property}: $name !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Generate justify-content classes
+@include generateFlexClasses($justifyContentOptions, justify-content, "justify");
+
+// Generate align-items classes
+@include generateFlexClasses($alignItemsOptions, align-items, "align-items");
+
+//Generate direction classes
+@include generateFlexClasses($flexDirectionOptions, flex-direction, "flex");
+
+@each $option in $flexWrapOptions {
+  .flex-#{$option} {
+    flex-wrap: $option;
+  }
+}
+
+@for $i from 1 through 10 {
+  .order-#{$i} {
+    order: $i;
+  }
+}

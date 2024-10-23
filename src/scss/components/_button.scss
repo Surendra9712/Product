@@ -1,0 +1,215 @@
+@use "../abstract/sass-vars" as vars;
+
+:root {
+  --button-fg-filled: rgba(var(--white));
+}
+
+@mixin button-base() {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: currentColor;
+  text-align: center;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    box-shadow 0.15s ease, border-color 0.15s ease;
+
+  border-width: var(--size-px);
+  border-style: solid;
+  border-color: var(--transparent);
+
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-default);
+  background: var(--transparent);
+  &.btn-icon {
+    gap: unset;
+    padding: unset;
+  }
+
+  &:focus {
+    &:focus-visible {
+      outline-offset: 0.125rem;
+      outline: 0.125rem solid rgba(var(--primary-lighter));
+    }
+  }
+
+  &:disabled {
+    background-color: var(--bg-disabled);
+    color: var(--fg-disabled) !important;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-sizes() {
+  @each $size in vars.$defaultSizingOptions {
+    &.size-#{$size} {
+      height: var(--button-#{$size}-size);
+      font-size: var(--button-#{$size}-text);
+      padding: var(--button-#{$size}-padding);
+      gap: var(--button-#{$size}-gap);
+      width: auto;
+      &.loading{
+        pointer-events: none;
+        opacity: 0.6;
+        span{
+          color: transparent;
+        }
+        &::before{
+          position: absolute;
+          content: '';
+          width: calc(var(--button-#{$size}-size) * 0.7);
+          height: calc(var(--button-#{$size}-size) * 0.7);
+          border: 2px solid transparent;
+          border-radius: 50%;
+          border-right-color: currentColor;
+          border-top-color: currentColor;
+          animation: spinner-anim 0.8s linear infinite;
+          z-index: 9;
+        }
+      }
+      @keyframes spinner-anim {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .svg-icon {
+        height: var(--button-#{$size}-icon-size);
+        width: var(--button-#{$size}-icon-size);
+      }
+
+      &.btn-icon {
+        width: var(--button-#{$size}-size);
+        min-width: var(--button-#{$size}-size);
+        height: var(--button-#{$size}-size);
+        min-height: var(--button-#{$size}-size);
+        padding: unset;
+      }
+    }
+  }
+}
+
+@mixin button-filled() {
+  &.btn-filled {
+    color: var(--button-fg-filled);
+
+    @each $color in vars.$colorOptions {
+      &.color-#{$color} {
+        &:not(:disabled) {
+          background-color: var(--button-bg-filled-#{$color});
+
+          &:hover {
+            background-color: var(--button-bg-filled-#{$color}-hover);
+          }
+
+          &:active,
+          &.active {
+            background-color: var(--button-bg-filled-#{$color}-active);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin button-outline() {
+  &.btn-outline {
+
+    background-color: var(--transparent);
+    border-color: currentColor;
+
+    @each $color in vars.$colorOptions {
+      &.color-#{$color} {
+        &:not(:disabled) {
+          color: var(--button-fg-outline-#{$color});
+
+          &:hover {
+            background-color: var(--button-bg-outline-#{$color}-hover);
+          }
+
+          &:active,
+          &.active {
+            background-color: var(--button-bg-outline-#{$color}-active);
+          }
+        }
+      }
+    }
+  }
+  &.border-gray {
+    border-color: var(--border-default);
+  }
+}
+
+@mixin button-light() {
+  &.btn-light {
+    @each $color in vars.$colorOptions {
+      &.color-#{$color} {
+        &:not(:disabled) {
+          background-color: var(--button-bg-light-#{$color});
+          color: var(--button-fg-light-#{$color});
+
+          &:hover {
+            background-color: var(--button-bg-light-#{$color}-hover);
+          }
+
+          &:active,
+          &.active {
+            background-color: var(--button-bg-light-#{$color}-active);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin button-subtle() {
+  &.btn-subtle {
+
+    @each $color in vars.$colorOptions {
+      &.color-#{$color} {
+        &:not(:disabled) {
+          background-color: var(--transparent);
+          color: var(--button-fg-subtle-#{$color});
+
+          &:hover {
+            background-color: var(--button-bg-subtle-#{$color}-hover);
+          }
+
+          &:active,
+          &.active {
+            background-color: var(--button-bg-subtle-#{$color}-active);
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  @include button-base();
+  @include button-sizes();
+  @include button-filled();
+  @include button-outline();
+  @include button-light();
+  @include button-subtle();
+}
+.qty-control-btn{
+  border-radius: var(--radius-default);
+  &.with-border:not(.disabled){
+    border: 1px solid var(--border-default);
+  }
+  &.disabled {
+    background-color: var(--bg-disabled);
+    color: var(--fg-disabled) !important;
+    cursor: not-allowed;
+    .btn{
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}

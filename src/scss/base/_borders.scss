@@ -1,0 +1,21 @@
+$borderColorOptions: default, primary, info, success, warning, danger;
+$borderOptions: left, top, bottom, right;
+
+@each $color in $borderColorOptions {
+  .border-#{$color} {
+    border-#{$color}-width: 1px;
+    border-color: var(--border-#{$color}) !important;
+  }
+}
+
+.border {
+  border: 1px solid var(--border-default);
+}
+
+@each $position in $borderOptions {
+  .border-#{$position} {
+    border-#{$position}-width: 1px;
+    border-style: solid;
+    border-color: var(--border-default);
+  }
+}

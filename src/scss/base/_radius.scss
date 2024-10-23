@@ -1,0 +1,7 @@
+$borderRadiusOptions: none, xs, sm, md, lg, xl, 2xl, full, rounded;
+
+@each $radius in $borderRadiusOptions {
+  .radius-#{$radius} {
+    border-radius: var(--radius-#{$radius}) !important;
+  }
+}

@@ -1,0 +1,319 @@
+:root {
+  /* ============================================== */
+  /* colors */
+  /* ============================================== */
+  --primary: 15 15 15;
+  --primary-light: 69 69 69;
+  --primary-lighter: 136 136 136;
+
+  --info: 3 131 162;
+  --info-light: 104 181 199;
+  --info-lighter: 205 230 236;
+
+  --success: 2 102 36;
+  --success-light: 103 163 124;
+  --success-lighter: 204 224 211;
+
+  --warning: 210 128 5;
+  --warning-light: 228 179 105;
+  --warning-lighter: 246 230 205;
+
+  --danger: 175 16 4;
+  --danger-light: 209 115 107;
+  --danger-lighter: 239 207 205;
+
+  --text-color-primary: 38 38 38;
+  --text-color-secondary: 79 79 79;
+  --text-disabled: 176 176 176;
+  --text-white-primary: 255 255 255;
+  --text-white-secondary:246 246 246;
+
+
+  --gray-50: 242 239 237;
+  --gray-100: 211 208 206;
+  --gray-200: 172 169 167;
+  --gray-300: 109 107 105;
+  --gray-400: 85 83 82;
+  --gray-500: 54 52 51;
+  --gray-600: 38 36 35;
+  --gray-700: 31 29 28;
+  --gray-800: 23 21 20;
+  --gray-900: 15 13 12;
+
+  --white: 255 255 255;
+  --transparent: rgba(0 0 0 / 0);
+
+  /* radius */
+  --radius-none: 0rem;
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 2rem;
+  --radius-rounded: 16rem;
+  --radius-default: var(--radius-sm);
+
+  /* size */
+  --size-0: 0;
+  --size-px: 1px;
+  --size-0p5: 0.25rem;
+  --size-1: 0.5rem;
+  --size-2: 1rem;
+  --size-3: 1.5rem;
+  --size-4: 2rem;
+  --size-5: 2.5rem;
+  --size-6: 3rem;
+  --size-7: 3.5rem;
+  --size-8: 4rem;
+  --size-9: 4.5rem;
+  --size-10: 5rem;
+  --size-11: 5.5rem;
+  --size-12: 6rem;
+  --size-13: 6.5rem;
+  --size-14: 7rem;
+  --size-15: 7.5rem;
+  --size-16: 8rem;
+  --size-1\/2: 50%;
+  --size-1\/3: 33.333333%;
+  --size-2\/3: 66.666667%;
+  --size-1\/4: 25%;
+  --size-2\/4: 50%;
+  --size-3\/4: 75%;
+  --size-1\/5: 20%;
+  --size-2\/5: 40%;
+  --size-3\/5: 60%;
+  --size-4\/5: 80%;
+  --size-1\/6: 16.666667%;
+  --size-2\/6: 33.333333%;
+  --size-3\/6: 50%;
+  --size-4\/6: 66.666667%;
+  --size-5\/6: 83.333333%;
+  --size-1\/12: 8.333333%;
+  --size-2\/12: 16.666667%;
+  --size-3\/12: 25%;
+  --size-4\/12: 33.333333%;
+  --size-5\/12: 41.666667%;
+  --size-6\/12: 50%;
+  --size-7\/12: 58.333333%;
+  --size-8\/12: 66.666667%;
+  --size-9\/12: 75%;
+  --size-10\/12: 83.333333%;
+  --size-11\/12: 91.666667%;
+  --size-full: 100%;
+  --size-w-screen: 100vw;
+  --size-h-screen: 100vh;
+
+  --size-xs: var(--size-1);
+  --size-sm: var(--size-2);
+  --size-md: var(--size-3);
+  --size-lg: var(--size-4);
+  --size-xl: var(--size-5);
+
+  /* space */
+  --space-0: 0rem;
+  --space-0p5: 0.25rem;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 2.5rem;
+  --space-7: 3rem;
+  --space-8: 3.5rem;
+  --space-9: 4rem;
+  --space-10: 4.5rem;
+  --space-11: 5rem;
+  --space-12: 5.5rem;
+  --space-13: 6rem;
+  --space-14: 6.5rem;
+  --space-15: 7rem;
+
+  --space-none: var(--space-0);
+  --space-3xs: var(--space-0p5);
+  --space-2xs: var(--space-1);
+  --space-xs: var(--space-2);
+  --space-sm: var(--space-3);
+  --space-md: var(--space-4);
+  --space-lg: var(--space-5);
+  --space-xl: var(--space-6);
+  --space-2xl: var(--space-7);
+  --space-3xl: var(--space-8);
+  --space-4xl: var(--space-9);
+
+  /* shadow */
+  --shadow-none: none;
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-sm: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  --shadow-md: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  --shadow-lg: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  --shadow-xl: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  --shadow-2xl: 0 35px 55px 8px rgba(0, 0, 0, 0.14),
+    0 14px 88px 11px rgba(0, 0, 0, 0.12);
+
+
+  /* ============================================== */
+  /* typography */
+  /* ============================================== */
+
+  --base-font-family-name:"Nunito Sans", sans-serif;
+
+  /* font size */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.5rem;
+  --text-7xl: 4rem;
+  --text-8xl: 5rem;
+  --text-base: 1rem;
+
+  /* font weight */
+  --weight-thin: 200;
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* letter spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+
+  /* heading */
+  --heading-font-family-name: var(--base-font-family-name);
+  --heading-font-family-style: Bold;
+  --heading-font-weight: var(--weight-bold);
+
+  --heading-1-font-size: 2.5rem;
+  --heading-1-line-height: 3.25rem;
+  --heading-2-font-size: 2rem;
+  --heading-2-line-height: 2.5rem;
+  --heading-3-font-size: 1.75rem;
+  --heading-3-line-height: 2.25rem;
+  --heading-4-font-size: 1.5rem;
+  --heading-4-line-height: 2rem;
+  --heading-5-font-size: 1.25rem;
+  --heading-5-line-height: 1.75rem;
+  --heading-6-font-size: 1rem;
+  --heading-6-line-height: 1.5rem;
+
+  /* body */
+  --body-font-family-name: var(--base-font-family-name);
+  --body-font-family-style: Regular;
+  --body-font-weight: var(--weight-normal);
+
+  --body-lg-font-size: 1rem;
+  --body-lg-line-height: 1.5rem;
+  --body-lg-letter-spacing: var(--letter-spacing-normal);
+  --body-md-font-size: 0.875rem;
+  --body-md-line-height: 1.25rem;
+  --body-md-letter-spacing: var(--letter-spacing-normal);
+  --body-sm-font-size: 0.75rem;
+  --body-sm-line-height: 1rem;
+  --body-sm-letter-spacing: var(--letter-spacing-normal);
+
+  /* label */
+  --label-font-family-name: var(--base-font-family-name);
+  --label-font-family-style: Regular;
+  --label-font-weight: var(--weight-semibold);
+
+  --label-lg-font-size: 1rem;
+  --label-lg-line-height: 1.25rem;
+  --label-lg-letter-spacing: var(--letter-spacing-normal);
+  --label-md-font-size: 0.875rem;
+  --label-md-line-height: 1rem;
+  --label-md-letter-spacing: var(--letter-spacing-normal);
+  --label-sm-font-size: 0.75rem;
+  --label-sm-line-height: 1rem;
+  --label-sm-letter-spacing: var(--letter-spacing-normal);
+
+  /* title */
+  --title-font-family-name: var(--base-font-family-name);
+  --title-font-family-style: Regular;
+  --title-font-weight: var(--weight-bold);
+
+  --title-lg-font-size: 1.25rem;
+  --title-lg-line-height: 1.75rem;
+  --title-lg-letter-spacing: var(--letter-spacing-normal);
+  --title-md-font-size: 1rem;
+  --title-md-line-height: 1.5rem;
+  --title-md-letter-spacing: var(--letter-spacing-normal);
+  --title-sm-font-size: 0.875rem;
+  --title-sm-line-height: 1.25rem;
+  --title-sm-letter-spacing: var(--letter-spacing-normal);
+
+  /* ============================================== */
+  /* components */
+  /* ============================================== */
+
+  /* avatar */
+  --avatar-xs: var(--size-4);
+  --avatar-sm: var(--size-5);
+  --avatar-md: var(--size-6);
+  --avatar-lg: var(--size-8);
+  --avatar-xl: var(--size-10);
+  --avatar-2xl: var(--size-12);
+  --avatar-3xl: var(--size-15);
+
+
+  /* button */
+  --button-xs-size: var(--size-3);
+  --button-sm-size: var(--size-4);
+  --button-md-size: var(--size-5);
+  --button-lg-size: var(--size-6);
+  --button-xl-size: var(--size-7);
+
+  --button-xs-text: var(--text-xs);
+  --button-sm-text: var(--text-sm);
+  --button-md-text: var(--text-sm);
+  --button-lg-text: var(--text-md);
+  --button-xl-text: var(--text-lg);
+
+  --button-xs-padding: 0 var(--space-1);
+  --button-sm-padding: 0 var(--space-1);
+  --button-md-padding: 0 var(--space-2);
+  --button-lg-padding: 0 var(--space-2);
+  --button-xl-padding: 0 var(--space-3);
+
+  --button-xs-icon-size: var(--text-md);
+  --button-sm-icon-size: var(--text-lg);
+  --button-md-icon-size: var(--text-lg);
+  --button-lg-icon-size: var(--text-xl);
+  --button-xl-icon-size: var(--text-2xl);
+
+  --button-xs-gap: var(--space-0p5);
+  --button-sm-gap: var(--space-1);
+  --button-md-gap: var(--space-1);
+  --button-lg-gap: var(--space-1);
+  --button-xl-gap: var(--space-2);
+
+  /* divider */
+  --divider-xs: var(--size-px);
+  --divider-sm: var(--size-1);
+  --divider-md: var(--size-2);
+  --divider-lg: var(--size-3);
+  --divider-xl: var(--size-4);
+  --divider-border-style: solid;
+  --divider-color: var(--border-100);
+
+  /* pill */
+  --pill-height: var(--size-4);
+  --pill-padding: var(--space-2);
+
+
+  --backgroundImage-checkbox-checked: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+  --backgroundImage-checkbox-indeterminate: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
+  --backgroundImage-radio-checked: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+  --backgroundImage-select: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' fill='%23000' d='M2.84765 7.00022C3.0646 7.00022 3.28154 7.08327 3.44679 7.24852L12 15.8017L20.5532 7.24852C20.8846 6.91717 21.4201 6.91717 21.7515 7.24852C22.0828 7.57987 22.0828 8.11545 21.7515 8.4468L12.5991 17.5991C12.2678 17.9305 11.7322 17.9305 11.4009 17.5991L2.24851 8.4468C1.91716 8.11545 1.91716 7.57987 2.24851 7.24852C2.41376 7.08327 2.63071 7.00022 2.84765 7.00022Z'/%3e%3c/svg%3e");
+  --backgroundImage-search-close: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' fill='%23444' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/%3e%3c/svg%3e");
+}

@@ -1,0 +1,40 @@
+@use "../abstract/sass-vars" as var;
+@use "mixin";
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  > [class^="col-"],
+  > * {
+    grid-column: span 12;
+    display: block;
+  }
+
+  .col-none {
+    display: none;
+  }
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      grid-column: span $i;
+    }
+  }
+
+  @each $point,$value in var.$breakpoints {
+    @for $i from 1 through 12 {
+      .col-#{$point}-#{$i} {
+        @include mixin.minViewport($value) {
+          grid-column: span $i;
+        }
+      }
+    }
+  }
+
+  @each $point,$value in var.$breakpoints {
+    .col-#{$point}-none {
+      @include mixin.minViewport($value) {
+        display: none;
+      }
+    }
+  }
+}

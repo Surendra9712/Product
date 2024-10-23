@@ -1,0 +1,128 @@
+@use "../abstract/sass-vars" as vars;
+
+[data-theme="light"] {
+  /* background colors */
+  --bg-solid-primary: rgba(var(--primary));
+  --bg-light-primary: rgba(var(--primary-light));
+  --bg-lighter-primary: rgba(var(--primary-lighter));
+
+  --bg-solid-info: rgba(var(--info));
+  --bg-light-info: rgba(var(--info-light));
+  --bg-lighter-info: rgba(var(--info-lighter));
+
+  --bg-solid-success: rgba(var(--success));
+  --bg-light-success: rgba(var(--success-light));
+  --bg-lighter-success: rgba(var(--success-lighter));
+
+  --bg-solid-warning: rgba(var(--warning));
+  --bg-light-warning: rgba(var(--warning-light));
+  --bg-lighter-warning: rgba(var(--warning-lighter));
+
+  --bg-solid-danger: rgba(var(--danger));
+  --bg-light-danger: rgba(var(--danger-light));
+  --bg-lighter-danger: rgba(var(--danger-lighter));
+
+  --bg-color-light: rgba(var(--primary-lighter) /20%);
+  --bg-color-dropdown: var(--bg-color-light);
+
+  /*Skeleton*/
+
+  --skeleton-background: rgba(var(--primary-lighter) /40%);
+  --skeleton-shine: rgba(var(--primary-lighter) /10%);
+
+  /* border colors */
+  --border-100: rgba(var(--gray-50));
+  --border-200: rgba(var(--gray-100));
+  --border-default: var(--border-200);
+  --border-primary: var(--bg-solid-primary);
+  --border-success: var(--bg-solid-success);
+  --border-info: var(--bg-solid-info);
+  --border-warning: var(--bg-solid-warning);
+  --border-danger: var(--bg-solid-danger);
+  /*Disabled color*/
+  --bg-disabled: rgba(var(--text-disabled) /20%);
+  --fg-disabled: rgba(var(--text-disabled));
+
+  /* foreground colors */
+  --fg-solid-primary: var(--white);
+  --fg-solid-accent: var(--white);
+  --fg-solid-dark: var(--white);
+  --fg-solid-info: var(--white);
+  --fg-solid-success: var(--white);
+  --fg-solid-warning: var(--white);
+  --fg-solid-danger: var(--white);
+
+  /* surface colors */
+  --surface-100: rgba(255, 255, 255,1);
+  --surface-200: rgba(246, 246, 246, 1);
+  --surface-300: rgba(246, 244, 243,1);
+  --surface-base: rgba(255, 255, 255, 1);
+
+  /* text colors */
+  --text-primary: rgba(var(--text-color-primary));
+  --text-secondary: rgba(var(--text-color-secondary));
+  --text-muted: rgba(var(--text-disabled));
+  --text-white: rgba(var(--text-white-primary));
+  --text-info: rgba(var(--info));
+  --text-success: rgba(var(--success));
+  --text-warning: rgba(var(--warning));
+  --text-danger: rgba(var(--danger));
+
+  /* colors */
+  @each $color in vars.$colorOptions {
+    /* buttons */
+    // filled
+    --button-bg-filled-#{$color}: rgba(var(--#{$color}));
+    --button-bg-filled-#{$color}-hover: rgba(var(--#{$color}));
+    --button-bg-filled-#{$color}-active: rgba(var(--#{$color}));
+
+    // outline
+    --button-bg-outline-#{$color}-hover: rgba(var(--#{$color}) / 20%);
+    --button-bg-outline-#{$color}-active: rgba(var(--#{$color}) / 72%);
+    --button-fg-outline-#{$color}: rgba(var(--#{$color}));
+
+    // light
+    --button-bg-light-#{$color}: rgba(var(--#{$color}-light) / 30%);
+    --button-bg-light-#{$color}-hover: rgba(var(--#{$color}-light) / 50%);
+    --button-bg-light-#{$color}-active: rgba(var(--#{$color}-light) / 70%);
+    --button-fg-light-#{$color}: rgba(var(--#{$color}));
+
+    // subtle
+    --button-bg-subtle-#{$color}-hover: rgba(var(--#{$color}-lighter) / 40%);
+    --button-bg-subtle-#{$color}-active: rgba(var(--#{$color}-lighter) / 80%);
+    --button-fg-subtle-#{$color}: rgba(var(--#{$color}));
+
+    //badge
+    --badge-bg-light-#{$color}: rgba(var(--#{$color}) /60%);
+
+    /* bg-fg-options */
+
+    /* filled */
+    --bg-filled-#{$color}: rgba(var(--#{$color}));
+    --fg-filled-#{$color}: rgba(var(--#{$color}));
+
+    /* outline */
+    --bg-outline-#{$color}: var(--transparent);
+    --fg-outline-#{$color}: rgba(var(--#{$color}));
+
+    /* light */
+    --bg-light-#{$color}: rgba(var(--#{$color}-light) / 32%);
+    --fg-light-#{$color}: rgba(var(--#{$color}-light));
+
+    /* subtle */
+    --fg-subtle-#{$color}: rgba(var(--#{$color}-lighter));
+
+    /*Stepper*/
+    --stepper-outline-#{$color}: rgba(var(--#{$color}) / 30%);
+    --stepper-fg-outline-#{$color}: rgba(var(--#{$color}) /60%);
+
+    /*Pill*/
+    --pill-bg-solid-#{$color}: rgba(var(--#{$color}));
+    --pill-fg-outline-#{$color}-hover: rgba(var(--#{$color}) / 20%);
+    --pill-bg-translucent-#{$color}:  rgba(var(--#{$color}) / 15%);
+
+  }
+  --fg-filled: rgba(var(--white));
+  --bg-default: rgba(var(--white));
+  --fg-default: currentColor;
+}

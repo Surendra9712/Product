@@ -1,0 +1,159 @@
+$spaceOptions: ("none","3xs", "2xs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl","4xl");
+@use "mixin";
+@use "../abstract/sass-vars" as vars;
+@each $option in $spaceOptions {
+  /* padding */
+  .p-#{$option} {
+    padding: var(--space-#{$option}) !important;
+  }
+  /* padding x-axis */
+  .px-#{$option} {
+    padding-right: var(--space-#{$option}) !important;
+    padding-left: var(--space-#{$option}) !important;
+  }
+  /* padding y-axis */
+  .py-#{$option} {
+    padding-top: var(--space-#{$option}) !important;
+    padding-bottom: var(--space-#{$option}) !important;
+  }
+  /* padding top */
+  .pt-#{$option} {
+    padding-top: var(--space-#{$option}) !important;
+  }
+  /* padding right */
+  .pr-#{$option} {
+    padding-right: var(--space-#{$option}) !important;
+  }
+  .pb-#{$option} {
+    padding-bottom: var(--space-#{$option}) !important;
+  }
+  /* padding left */
+  .pl-#{$option} {
+    padding-left: var(--space-#{$option}) !important;
+  }
+  /* padding inline start */
+  .ps-#{$option} {
+    padding-inline-start: var(--space-#{$option}) !important;
+  }
+  /* padding inline end */
+  .pe-#{$option} {
+    padding-inline-end: var(--space-#{$option}) !important;
+  }
+
+  /* margin */
+  .m-#{$option} {
+    margin: var(--space-#{$option}) !important;
+  }
+  /* margin y-axis */
+  .my-#{$option} {
+    margin-top: var(--space-#{$option}) !important;
+    margin-bottom: var(--space-#{$option}) !important;
+  }
+  /* margin x-axis */
+  .mx-#{$option} {
+    margin-right: var(--space-#{$option}) !important;
+    margin-left: var(--space-#{$option}) !important;
+  }
+
+  .mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* margin top */
+  .mt-#{$option} {
+    margin-top: var(--space-#{$option});
+  }
+  /* margin right */
+  .mr-#{$option} {
+    margin-right: var(--space-#{$option});
+  }
+  /* margin bottom */
+  .mb-#{$option} {
+    margin-bottom: var(--space-#{$option});
+  }
+  /* margin left */
+  .ml-#{$option} {
+    margin-left: var(--space-#{$option});
+  }
+
+  /* gap */
+  .gap-#{$option} {
+    gap: var(--space-#{$option});
+  }
+  /* gap y-axis */
+  .gap-y-#{$option} {
+    row-gap: var(--space-#{$option});
+  }
+  /* gap x-axis */
+  .gap-x-#{$option} {
+    column-gap: var(--space-#{$option});
+  }
+
+  // Responsive Utilities
+  @each $breakpoint, $value in vars.$breakpoints {
+    @include mixin.minViewport($value) {
+      // Margin
+      .m-#{$breakpoint}-#{$option} {
+        margin: var(--space-#{$option}) !important;
+      }
+      .my-#{$breakpoint}-#{$option} {
+        margin-top: var(--space-#{$option}) !important;
+        margin-bottom: var(--space-#{$option}) !important;
+      }
+      .mx-#{$breakpoint}-#{$option} {
+        margin-left: var(--space-#{$option}) !important;
+        margin-right: var(--space-#{$option}) !important;
+      }
+      .mt-#{$breakpoint}-#{$option} {
+        margin-top: var(--space-#{$option}) !important;
+      }
+      .mr-#{$breakpoint}-#{$option} {
+        margin-right: var(--space-#{$option}) !important;
+      }
+      .mb-#{$breakpoint}-#{$option} {
+        margin-bottom: var(--space-#{$option}) !important;
+      }
+      .ml-#{$breakpoint}-#{$option} {
+        margin-left: var(--space-#{$option}) !important;
+      }
+
+      // Responsive Padding
+      .p-#{$breakpoint}-#{$option} {
+        padding: var(--space-#{$option}) !important;
+      }
+      .py-#{$breakpoint}-#{$option} {
+        padding-top: var(--space-#{$option}) !important;
+        padding-bottom: var(--space-#{$option}) !important;
+      }
+      .px-#{$breakpoint}-#{$option} {
+        padding-left: var(--space-#{$option}) !important;
+        padding-right: var(--space-#{$option}) !important;
+      }
+      .pt-#{$breakpoint}-#{$option} {
+        padding-top: var(--space-#{$option}) !important;
+      }
+      .pr-#{$breakpoint}-#{$option} {
+        padding-right: var(--space-#{$option}) !important;
+      }
+      .pb-#{$breakpoint}-#{$option} {
+        padding-bottom: var(--space-#{$option}) !important;
+      }
+      .pl-#{$breakpoint}-#{$option} {
+        padding-left: var(--space-#{$option}) !important;
+      }
+      /* gap */
+      .gap-#{$breakpoint}-#{$option} {
+        gap: var(--space-#{$option});
+      }
+      /* gap y-axis */
+      .gap-#{$breakpoint}-y-#{$option} {
+        row-gap: var(--space-#{$option});
+      }
+      /* gap x-axis */
+      .gap-#{$breakpoint}-x-#{$option} {
+        column-gap: var(--space-#{$option});
+      }
+    }
+  }
+}

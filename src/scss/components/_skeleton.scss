@@ -1,0 +1,78 @@
+$animation-duration: 2s;
+$avatarSizeOptions: xs, sm, md, lg, xl, 2xl, 3xl;
+
+@keyframes skeleton-animation {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+
+.skeleton-parent-wrapper {
+  position: relative;
+
+  .skeleton-child-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 2rem);
+  }
+}
+
+.skeleton-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.skeleton-loader {
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  height: 2rem;
+  width: 100%;
+  border-radius: var(--radius-default);
+  background: linear-gradient(90deg, var(--skeleton-background) 24%, var(--skeleton-shine) 48%, var(--skeleton-background) 72%);
+  background-size: 400% 100%;
+  -webkit-animation: skeleton-bg-image $animation-duration ease infinite;
+  animation: skeleton-animation $animation-duration ease infinite;
+
+  &.skeleton-loader-avatar {
+    max-width: 2rem;
+    border-radius: 50%;
+
+    @each $space in $avatarSizeOptions {
+      &.size-#{$space} {
+        max-width: var(--avatar-#{$space});
+        height: var(--avatar-#{$space});
+      }
+    }
+  }
+  &.skeleton-card{
+    height: 300px;
+    width: 100%;
+  }
+
+  &.skeleton-loader-line {
+    height: 0.75rem;
+    border-radius: 1rem;
+  }
+
+  &.skeleton-loader-title {
+    height: 1rem;
+    border-radius: 1rem;
+    max-width: 10rem;
+    width: 64%;
+  }
+  &.skeleton-loader-subtitle {
+    height: 1rem;
+    border-radius: 1rem;
+    max-width: 8rem;
+    width: 64%;
+  }
+}
+
