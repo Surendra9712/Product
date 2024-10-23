@@ -27,7 +27,7 @@ export const useSnackbar = (): SnackbarContextProps => {
 
 export const SnackbarProvider: React.FC<{ children: ReactNode }> = ({children}) => {
     const [snackbar, setSnackbar] = useState<SnackbarState>({message: '', title: '', type: 'info', open: false});
-    const [timeoutId, setTimeoutId] = useState<number | null>(null);
+    const [timeoutId, setTimeoutId] = useState<any>(null);
 
     const closeSnackbar = useCallback(() => {
         setSnackbar(prev => ({...prev, open: false}));
