@@ -62,7 +62,7 @@
   --text-primary: rgba(var(--text-color-primary));
   --text-secondary: rgba(var(--text-color-secondary));
   --text-muted: rgba(var(--text-disabled));
-  --text-white: rgba(var(--text-white-primary));
+  --text-light: rgba(var(--text-white-primary));
   --text-info: rgba(var(--info));
   --text-success: rgba(var(--success));
   --text-warning: rgba(var(--warning));
@@ -92,9 +92,6 @@
     --button-bg-subtle-#{$color}-active: rgba(var(--#{$color}-lighter) / 80%);
     --button-fg-subtle-#{$color}: rgba(var(--#{$color}));
 
-    //badge
-    --badge-bg-light-#{$color}: rgba(var(--#{$color}) /60%);
-
     /* bg-fg-options */
 
     /* filled */
@@ -111,16 +108,6 @@
 
     /* subtle */
     --fg-subtle-#{$color}: rgba(var(--#{$color}-lighter));
-
-    /*Stepper*/
-    --stepper-outline-#{$color}: rgba(var(--#{$color}) / 30%);
-    --stepper-fg-outline-#{$color}: rgba(var(--#{$color}) /60%);
-
-    /*Pill*/
-    --pill-bg-solid-#{$color}: rgba(var(--#{$color}));
-    --pill-fg-outline-#{$color}-hover: rgba(var(--#{$color}) / 20%);
-    --pill-bg-translucent-#{$color}:  rgba(var(--#{$color}) / 15%);
-
   }
   --fg-filled: rgba(var(--white));
   --bg-default: rgba(var(--white));

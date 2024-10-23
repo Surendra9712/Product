@@ -13,7 +13,7 @@ interface EmptyStateProps {
 const emptyStateConfig = {
     cart: {
         title: 'Your Cart is Empty',
-        message: 'Start adding items to your order to begin shopping.',
+        message: 'Start adding items to your cart to begin shopping.',
         icon: CartIllustration
     },
     default: {
@@ -27,9 +27,9 @@ export default function EmptyState({type = 'default'}: EmptyStateProps) {
     const {title, message, icon} = emptyStateConfig[type] || emptyStateConfig.default;
 
     return (
-        <div className="flex justify-content-center align-items-center flex-direction-column gap-2xl">
+        <div className="flex justify-center align-items-center flex-column gap-2xl">
             <AppText as={'span'}> {icon}</AppText>
-            <div style={{maxWidth: '25rem'}} className="flex flex-direction-column align-items-center">
+            <div style={{maxWidth: '25rem'}} className="flex flex-column align-items-center">
                 <AppTitle as='h4' textAlign='center'>{title}</AppTitle>
                 <AppText textAlign='center'>{message}</AppText>
             </div>

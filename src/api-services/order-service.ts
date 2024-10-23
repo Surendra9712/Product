@@ -1,11 +1,9 @@
-import {AbstractBaseService} from "../ensue-react-system/utilities/base-service";
-import {HttpClient} from "../ensue-react-system/http/http-client";
-import {ApiEndPointUriProvider} from "../ensue-react-system/http/http-types";
 import {Cart} from "../commons/models";
+import {AbstractBaseService} from "../system/utilities/base-service";
+import {HttpClient} from "../system/http/http-client";
+import {ApiEndPointUriProvider} from "../system/http/http-types";
 
-export class OrderService extends AbstractBaseService<Cart> {
-    protected __model: Cart = new Cart();
-
+export class OrderService extends AbstractBaseService {
     public constructor(__client: HttpClient, __endpointProvider: ApiEndPointUriProvider) {
         super(__client, __endpointProvider);
     }
@@ -30,7 +28,7 @@ export class OrderService extends AbstractBaseService<Cart> {
         return this.__client.get(`${this.__url}/user/cart-details/${cartId}`);
     }
 
-    public async removeItem(orderId: number, productId: number): Promise<boolean> {
-        return this.__client.delete(`${this.__url}/${orderId}/product/${productId}`);
+    public updateQty(cartId:string,itemId:string,quantity:number): Promise<Cart> {
+        return this.__client.put(`${this.__url}/update-item/${cartId}/${itemId}`,{quantity});
     }
 }

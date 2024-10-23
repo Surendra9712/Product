@@ -51,7 +51,7 @@
 /* font weight */
 @each $weight in vars.$fontWeightOptions {
   .font-#{$weight} {
-    font-weight: var(--weight-#{$weight});
+    font-weight: var(--weight-#{$weight}) !important;
   }
 }
 

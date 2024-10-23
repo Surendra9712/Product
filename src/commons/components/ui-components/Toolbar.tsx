@@ -1,4 +1,4 @@
-import {AppContainer} from "..";
+import {AppContainer, AppLink, AppTitle} from "..";
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
@@ -31,12 +31,13 @@ export default function Toolbar() {
     }, [cartProducts]);
 
     return (
-        <>
+        <header className="py-sm  bg-filled color-primary">
             <AppContainer>
-                <header className="ee-toolbar py-md-lg py-sm">
-                    <CartButton badgeCount={itemCount}/>
-                </header>
+                <div className="flex justify-between">
+                    <AppLink to={''} size={'2xl'} fontWeight={'bold'} color='light'>My Shop</AppLink>
+                    <CartButton count={itemCount}/>
+                </div>
             </AppContainer>
-        </>
+        </header>
     );
 }

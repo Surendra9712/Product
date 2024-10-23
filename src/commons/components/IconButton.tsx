@@ -34,6 +34,8 @@ export default function IconButton({
     radius && `radius-${radius}`,
     borderLight && `border-light`,
     className && `${className}`,
+    loading && `loading`,
+
   ]
     .filter(Boolean)
     .join(" ");
@@ -47,7 +49,6 @@ export default function IconButton({
       aria-disabled={disabled}
       onClick={onClick}
     >
-      {loading && <>laoding</>}
       {icon}
     </button>
   );

@@ -10,7 +10,7 @@ export const ErrorInterceptor = () => {
     useEffect(() => {
         interceptorId.current = axios.interceptors.response.use(undefined, (error) => {
             const err = error.response;
-            if (error.response.status !== 417) {
+            if (err.status !== 417) {
                 showErrorSnackbar({message: err.data.message});
             }
             return Promise.reject(error);

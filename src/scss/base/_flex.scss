@@ -67,15 +67,3 @@ $alignItemsOptions: (
 
 //Generate direction classes
 @include generateFlexClasses($flexDirectionOptions, flex-direction, "flex");
-
-@each $option in $flexWrapOptions {
-  .flex-#{$option} {
-    flex-wrap: $option;
-  }
-}
-
-@for $i from 1 through 10 {
-  .order-#{$i} {
-    order: $i;
-  }
-}

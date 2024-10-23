@@ -44,7 +44,7 @@ $sizeOptions: (
   "11\\/12",
   "full"
 );
-$avatarSizeOptions: xs, sm, md, lg, xl, 2xl, 3xl;
+$defaultsSzeOptions: xs, sm, md, lg, xl, 2xl, 3xl;
 
 @each $option in $sizeOptions {
   /* Width */
@@ -118,7 +118,7 @@ $avatarSizeOptions: xs, sm, md, lg, xl, 2xl, 3xl;
 .max-h-screen {
   max-height: var(--size-h-screen);
 }
-@each $size in $avatarSizeOptions {
+@each $size in $defaultsSzeOptions {
   .size-#{$size} {
     height: var(--avatar-#{$size});
     width: var(--avatar-#{$size});

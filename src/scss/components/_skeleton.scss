@@ -1,5 +1,4 @@
 $animation-duration: 2s;
-$avatarSizeOptions: xs, sm, md, lg, xl, 2xl, 3xl;
 
 @keyframes skeleton-animation {
   0% {
@@ -40,18 +39,7 @@ $avatarSizeOptions: xs, sm, md, lg, xl, 2xl, 3xl;
   background-size: 400% 100%;
   -webkit-animation: skeleton-bg-image $animation-duration ease infinite;
   animation: skeleton-animation $animation-duration ease infinite;
-
-  &.skeleton-loader-avatar {
-    max-width: 2rem;
-    border-radius: 50%;
-
-    @each $space in $avatarSizeOptions {
-      &.size-#{$space} {
-        max-width: var(--avatar-#{$space});
-        height: var(--avatar-#{$space});
-      }
-    }
-  }
+  
   &.skeleton-card{
     height: 300px;
     width: 100%;

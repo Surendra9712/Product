@@ -8,8 +8,7 @@ import Dashboard from "./pages/dashboard/dashboard";
 import Toolbar from "./commons/components/ui-components/Toolbar";
 import ProductDetail from "./pages/dashboard/productDetail";
 import {NotFound} from "./commons/components";
-import Cart from "./pages/order/cart";
-import MyOrder from "./pages/order/myOrder";
+import CartPage from "./pages/order/cart-page";
 
 export const PublicLayout = () => (
     <>
@@ -24,7 +23,6 @@ export const PublicLayout = () => (
 export const HOME_PATH = "/";
 export const PRODUCT_DETAIL = "product/:slug";
 export const CART = "cart";
-export const ORDERS = "orders";
 export const router = createBrowserRouter([
     {
         path: HOME_PATH,
@@ -40,11 +38,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: CART,
-                element: <Cart/>,
-            },
-            {
-                path: ORDERS,
-                element: <MyOrder/>,
+                element: <CartPage/>,
             },
             {
                 path: '*',

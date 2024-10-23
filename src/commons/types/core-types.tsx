@@ -16,6 +16,7 @@ export type Colors =
   | "success"
   | "warning"
   | "danger"
+  | "light"
 export type FontWeight =
   | "thin"
   | "light"

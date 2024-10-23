@@ -1,11 +1,9 @@
-import {BaseModel} from "../../../ensue-react-system/utilities/base-model";
-import {IProduct} from "./i-product";
 import {IBrand} from "./i-brand";
 import {ISizeVariant} from "./i-size-variant";
 import {IColorVariants} from "./i-color-variants";
 import {ICategory} from "./i-category";
 
-export class Product extends BaseModel implements IProduct {
+export class Product  {
     public _id: string = '';
     public price: number = 0;
     public ratedBy: number = 0;
@@ -23,11 +21,6 @@ export class Product extends BaseModel implements IProduct {
     public sizeVariants: ISizeVariant[] = [];
     public category: ICategory = {title: '', slug: '', parentId: '', level: 0};
     public howToUse:string ='';
-
-    public constructor(props: { [key: string]: any } | undefined = undefined) {
-        super(props);
-        this.__init(props);
-    }
 
     public mergeImages(product: Product): Product {
         const allImages = [...product.images];

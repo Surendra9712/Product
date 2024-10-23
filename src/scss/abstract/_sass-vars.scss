@@ -18,8 +18,8 @@ $breakpoints: (
         2xl: $breakpoint-2xl,
 );
 
-$textColorOptions: primary,secondary, info, success, warning, danger, default, muted, currentColor;
-$textTypeSizeOptions: lg, md, sm;
+$textColorOptions: light, primary,secondary, info, success, warning, danger, default, muted, currentColor;
+$textTypeSizeOptions: 2xl,xl,lg, md, sm;
 $fontWeightOptions: thin, light, normal, md, semibold, bold, extrabold;
 $textTypeOptions: body, label, title;
 $textAlignOptions: left, center, right, justify, start, end;

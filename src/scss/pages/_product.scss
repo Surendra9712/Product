@@ -1,5 +1,9 @@
+@use "../base/mixin";
 .page-wrapper {
   padding: calc(var(--space-3xl) + var(--space-3xs)) 0;
+  @include mixin.md(){
+    padding: var(--space-xl) 0;
+  }
 }
 
 .description {

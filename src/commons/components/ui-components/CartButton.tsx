@@ -1,17 +1,14 @@
 import {IconCartPlus} from "../icons/icons";
-interface BadgeProps {
-    badgeCount?: number
-    onClick?: () => void
-}
+import {Link} from "react-router-dom";
 
 export default function CartButton({
-                                  badgeCount,
-                                  onClick
-                              }: BadgeProps) {
-    return (<button
-        className='p-xs radius-rounded relative'
-        onClick={onClick}>
+                                       count
+                                   }: { count?: number }) {
+    return (<Link
+        className='btn btn-icon bg-filled color-primary size-lg radius-rounded relative cursor-pointer'
+        to={'/cart'}>
         {IconCartPlus}
-        {badgeCount ? <span className={'absolute bottom-2/4 left-3/4 cart-count bg-filled color-primary radius-rounded h-3 w-3 text-center flex align-items-center justify-center body-sm'}>{badgeCount}</span> : null}
-    </button>)
+        {count ? <span
+            className={'absolute bottom-2/4 left-3/5 cart-count bg-filled color-danger radius-rounded h-3 w-3 text-center flex align-items-center justify-center body-sm'}>{count}</span> : null}
+    </Link>)
 }

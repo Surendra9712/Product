@@ -1,5 +1,5 @@
-import { ApiEndPointUriProvider } from "../../ensue-react-system/http/http-types";
 import { Environment } from "../../environments/environment";
+import {ApiEndPointUriProvider} from "../../system/http/http-types";
 
 export class UriProvider implements ApiEndPointUriProvider {
     public provide(): string {

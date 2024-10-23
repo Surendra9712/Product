@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Cart, IAddToCart, IProduct} from "../../commons/models";
+import {Cart, IAddToCart} from "../../commons/models";
 import {cartService} from "../../commons";
 import {SliceStatusEnum} from "../../commons/enum";
 
@@ -35,15 +35,7 @@ const cartSlice = createSlice({
     reducers: {
         setCartItem: (state, action: PayloadAction<Cart|null>) => {
             state.item = action.payload;
-        },
-        removeCartItem: (state, action: PayloadAction<IProduct>) => {
-            if (state.item) {
-                const index = state.item.items.findIndex((item:IProduct) => item._id === action.payload._id);
-                if (index !== -1) {
-                    state.item.items.splice(index, 1);
-                }
-            }
-        },
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -60,6 +52,6 @@ const cartSlice = createSlice({
             });
     },
 });
-export const {setCartItem, removeCartItem} = cartSlice.actions;
+export const {setCartItem} = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -1,9 +1,10 @@
+import {ICartProduct} from "./i-cart-product";
 export interface ICart {
     createdAt:string,
     deliveryAddress:string,
     deliveryCharge:number
     isDeleted:boolean
-    items:any
+    items:ICartProduct[]
     orderId:string
     orderStatus:string
     paymentMethod:string

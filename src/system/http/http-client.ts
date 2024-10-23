@@ -83,11 +83,6 @@ export class HttpHeaders {
         return this.__headers[key]
     }
 
-    public setAuthBearerToken(token: string): HttpHeaders {
-        this.__headers['Authorization'] = 'Bearer ' + token;
-        return this;
-    }
-
     public getHeaders(): {[key: string] : string} {
         return this.__headers;
     }

@@ -7,7 +7,6 @@
 /* utility classes */
 @use "./base/borders";
 @use "./base/colors";
-@use "./base/grid";
 @use "./base/radius";
 @use "./base/spacing";
 @use "./base/sizing";
@@ -21,20 +20,13 @@
 @use "./base/theme-light";
 
 /* components */
-@use "./components/avatar";
+@use "./components/pagination";
 @use "./components/button";
 @use "./components/container";
-@use "./components/anchor";
-@use "./base/input";
-@use "./components/pill";
-@use "./components/stepper";
 @use "./components/snackbar";
 @use "./components/skeleton";
-@use "./components/spinner";
-@use "./components/dialog";
 
 /* app components */
 
 /* pages */
 @use "./pages/product";
-@use "./pages/cart";
